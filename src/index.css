@@ -2,7 +2,8 @@
 
 @theme {
   --color-cta: #68d0f1;
-  --color-secondary: #D2F1FA;
+  --color-cta-darker: #49bade;
+  --color-secondary: #d2f1fa;
 }
 
 ::-webkit-scrollbar {

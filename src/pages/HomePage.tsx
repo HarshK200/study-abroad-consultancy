@@ -17,7 +17,10 @@ export const HomePage = () => {
 
   return (
     <main>
-      <section id="hero-section" className="bg-cta text-white">
+      <section
+        id="hero-section"
+        className="bg-linear-to-bl from-cta to-cta-darker text-white"
+      >
         <GlobalPaddingWrapper>
           <MaxWidthWrapper>
             <div className="py-12 md:py-12 lg:py-14 items-center justify-center grid auto-cols-fr grid-flow-row lg:grid-cols-2 gap-3">
@@ -25,7 +28,7 @@ export const HomePage = () => {
                 <h1 className="font-bold text-3xl md:text-4xl mb-5">
                   Your one stop solution to Study Abroad!
                 </h1>
-                <p className="mb-8 text-lg">
+                <p className="mb-8 text-base md:text-lg">
                   Best consulting service for studing abroad.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2">
@@ -37,8 +40,11 @@ export const HomePage = () => {
             </div>
 
             <div className="flex flex-col items-center">
-              <h1 className="text-lg">Our students pursue their studies at</h1>
-              <div className="flex"></div>
+              <h1 className="text-base md:text-lg">
+                Our students pursue their studies at
+              </h1>
+              <div id="image-slider" className="flex">
+              </div>
             </div>
           </MaxWidthWrapper>
         </GlobalPaddingWrapper>

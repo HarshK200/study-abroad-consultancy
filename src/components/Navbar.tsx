@@ -9,7 +9,7 @@ export const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useAtom(sideBarAtom);
 
   return (
-    <nav className="sticky z-[1] bg-white top-0 border-b-[1px] border-slate-300 py-1.5 px-4 flex justify-between items-center">
+    <nav className="sticky z-[1] backdrop-blur-sm bg-white/50 top-0 border-b-[1px] border-slate-300 py-1.5 px-4 flex justify-between items-center">
       <Link to={"/"}>
         <img src="/HSG logo.avif" width={90} />
       </Link>
