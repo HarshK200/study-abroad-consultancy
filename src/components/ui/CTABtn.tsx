@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 interface buttonProps {
   children: React.ReactNode;
   to: string;
-  className: string;
+  className?: string;
 }
 
 export const CTABtn = ({ children, to, className }: buttonProps) => {
   return (
     <Link
       to={to}
-      className={`whitespace-nowrap cursor-pointer h-fit px-5 py-2.5 rounded-full bg-cta text-white font-bold ${className}`}
+      className={`whitespace-nowrap flex items-center justify-center cursor-pointer px-3 py-1.5 rounded-md bg-white text-black border-[2px] border-cta ${className}`}
     >
       {children}
     </Link>

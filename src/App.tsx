@@ -8,9 +8,9 @@ function App() {
     <div className="min-h-screen">
       <Navbar />
       <Routes>
-        <Route path="*" element={<NotFoundPage />} />
-
         <Route path="/" element={<HomePage />} />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );
