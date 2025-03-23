@@ -1,12 +1,12 @@
-"use client";
 import { Link } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { NavActionLink } from "./ui/NavActionBtn";
-import { useState } from "react";
 import { CTABtn } from "./ui/CTABtn";
+import { useAtom } from "jotai";
+import { sideBarAtom } from "@/store";
 
 export const Navbar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useAtom(sideBarAtom);
 
   return (
     <nav className="sticky z-[1] bg-white top-0 border-b-[1px] border-slate-300 py-1.5 px-4 flex justify-between items-center">
@@ -62,45 +62,30 @@ const SideBar = ({
 }) => {
   return (
     <div
-      className={`fixed top-0 right-0 bg-white drop-shadow-lg min-h-screen flex flex-col px-8 py-8 ${className}`}
+      className={`fixed top-0 right-0 bg-white drop-shadow-lg min-h-screen flex flex-col ${className}`}
     >
-      <X
-        className="absolute top-5 right-4 size-7 cursor-pointer"
-        onClick={() => setIsSidebarOpen(false)}
-      />
-      <NavActionLink setIsSidebarOpen={setIsSidebarOpen} to="/">
-        Home
-      </NavActionLink>
-      <NavActionLink setIsSidebarOpen={setIsSidebarOpen} to="/testprep">
-        TestPrep
-      </NavActionLink>
-      <NavActionLink setIsSidebarOpen={setIsSidebarOpen} to="/study">
-        Study Destenations
-      </NavActionLink>
-      <NavActionLink setIsSidebarOpen={setIsSidebarOpen} to="/scholarships">
-        ScholarShips
-      </NavActionLink>
-      <NavActionLink setIsSidebarOpen={setIsSidebarOpen} to="/testimonials">
-        Testimonials
-      </NavActionLink>
-      <NavActionLink setIsSidebarOpen={setIsSidebarOpen} to="/blogs">
-        Blogs
-      </NavActionLink>
-      <NavActionLink setIsSidebarOpen={setIsSidebarOpen} to="/contact">
-        Contact
-      </NavActionLink>
-      <NavActionLink
-        setIsSidebarOpen={setIsSidebarOpen}
-        to="/test"
-        className="flex items-center gap-1"
-      >
-        <p>More</p>
-        <ChevronDown />
-      </NavActionLink>
-
-      <CTABtn to="/book-a-session" className="my-10">
-        Book a session
-      </CTABtn>
+      <div className="flex py-4 px-8">
+        <CTABtn to="/book-a-session" className="bg-cta text-white py-3">
+          Book a session
+        </CTABtn>
+        <X
+          className="relative left-4 top-2 size-7 cursor-pointer"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      </div>
+      <div className="flex flex-col px-6">
+        <NavActionLink to="/">Home</NavActionLink>
+        <NavActionLink to="/testprep">TestPrep</NavActionLink>
+        <NavActionLink to="/study">Study Destenations</NavActionLink>
+        <NavActionLink to="/scholarships">ScholarShips</NavActionLink>
+        <NavActionLink to="/testimonials">Testimonials</NavActionLink>
+        <NavActionLink to="/blogs">Blogs</NavActionLink>
+        <NavActionLink to="/contact">Contact</NavActionLink>
+        <NavActionLink to="/test" className="flex items-center gap-1">
+          <p>More</p>
+          <ChevronDown />
+        </NavActionLink>
+      </div>
     </div>
   );
 };

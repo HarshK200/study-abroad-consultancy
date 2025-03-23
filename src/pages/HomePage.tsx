@@ -2,16 +2,27 @@ import { CTABtn } from "@/components/ui/CTABtn";
 import { GlobalPaddingWrapper } from "@/components/wrappers/GlobalPaddingWrapper";
 import { SecondaryBtn } from "@/components/ui/SecondaryBtn";
 import { MaxWidthWrapper } from "@/components/wrappers/MaxWidthWrapper";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useAtom } from "jotai";
+import { currentPageUrlAtom } from "@/store";
 
 export const HomePage = () => {
+  const [_, setCurrentPageUrl] = useAtom(currentPageUrlAtom);
+  const url = useLocation();
+
+  useEffect(() => {
+    setCurrentPageUrl(url.pathname);
+  }, []);
+
   return (
     <main>
       <section id="hero-section" className="bg-cta text-white">
         <GlobalPaddingWrapper>
           <MaxWidthWrapper>
-            <div className="py-16 md:py-24 lg:py-20 items-center justify-center grid auto-cols-fr grid-flow-row lg:grid-cols-2 gap-3">
+            <div className="py-12 md:py-12 lg:py-14 items-center justify-center grid auto-cols-fr grid-flow-row lg:grid-cols-2 gap-3">
               <div>
-                <h1 className="font-bold text-4xl mb-5">
+                <h1 className="font-bold text-3xl md:text-4xl mb-5">
                   Your one stop solution to Study Abroad!
                 </h1>
                 <p className="mb-8 text-lg">
@@ -23,6 +34,11 @@ export const HomePage = () => {
                 </div>
               </div>
               <img src="/model.avif" className="w-full" />
+            </div>
+
+            <div className="flex flex-col items-center">
+              <h1 className="text-lg">Our students pursue their studies at</h1>
+              <div className="flex"></div>
             </div>
           </MaxWidthWrapper>
         </GlobalPaddingWrapper>
