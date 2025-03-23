@@ -17,7 +17,7 @@ export const Navbar = () => {
         <ActionBtns className="hidden xl:flex" />
         <CTABtn
           to="book-a-session"
-          className="hidden md:block xl:hidden border-[2px]"
+          className="hidden md:block xl:hidden border-[2px] bg-cta text-white"
         >
           Book a Free Session
         </CTABtn>
@@ -46,7 +46,9 @@ const ActionBtns = ({ className }: { className?: string }) => {
       <NavActionLink to="contact">Contact</NavActionLink>
       <NavActionLink to="more">More</NavActionLink>
 
-      <CTABtn to="book-a-session" className="mx-4">Book a Session</CTABtn>
+      <CTABtn to="book-a-session" className="mx-4 bg-cta text-white">
+        Book a Session
+      </CTABtn>
     </div>
   );
 };
