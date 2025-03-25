@@ -17,7 +17,7 @@ export const Navbar = () => {
         <ActionBtns className="hidden xl:flex" />
         <CTABtn
           to="book-a-session"
-          className="hidden md:block xl:hidden border-[2px] bg-cta text-white"
+          className="hidden md:block xl:hidden bg-cta text-white"
         >
           Book a Free Session
         </CTABtn>
@@ -40,11 +40,11 @@ const ActionBtns = ({ className }: { className?: string }) => {
       <NavActionLink to="/">Home</NavActionLink>
       <NavActionLink to="/testprep">TestPrep</NavActionLink>
       <NavActionLink to="/study-destination">Study Destinations</NavActionLink>
-      <NavActionLink to="scholarships">ScholarShips</NavActionLink>
-      <NavActionLink to="testimonials">Testimonials</NavActionLink>
-      <NavActionLink to="blogs">Blogs</NavActionLink>
-      <NavActionLink to="contact">Contact</NavActionLink>
-      <NavActionLink to="more">More</NavActionLink>
+      <NavActionLink to="/scholarships">ScholarShips</NavActionLink>
+      <NavActionLink to="/testimonials">Testimonials</NavActionLink>
+      <NavActionLink to="/blogs">Blogs</NavActionLink>
+      <NavActionLink to="/contact">Contact</NavActionLink>
+      <NavActionLink to="/more">More</NavActionLink>
 
       <CTABtn to="book-a-session" className="mx-4 bg-cta text-white">
         Book a Session

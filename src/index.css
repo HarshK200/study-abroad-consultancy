@@ -4,10 +4,19 @@
   --color-cta: #68d0f1;
   --color-cta-darker: #49bade;
   --color-secondary: #d2f1fa;
+
+  --animate-scroll-left: scroll 70s linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(-50%);
+    }
+  }
 }
 
 ::-webkit-scrollbar {
   width: 5px; /* Narrow width similar to mobile */
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {

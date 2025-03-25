@@ -16,7 +16,10 @@ export const NavActionLink = ({ children, to, className }: buttonProps) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    url === to ? setIsActive(true) : setIsActive(false);
+    const urlParsed = url.split("#")[0].split("/").join("");
+    const toParsed = to.split("#")[0].split("/").join("");
+
+    urlParsed === toParsed ? setIsActive(true) : setIsActive(false);
   }, [url]);
 
   return (
