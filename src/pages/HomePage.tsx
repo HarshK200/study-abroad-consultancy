@@ -68,7 +68,7 @@ export const HomePage = () => {
         <GlobalPaddingXWrapper>
           <GlobalPaddingYWrapper>
             <MaxWidthWrapper>
-              <div className="items-center justify-center grid grid-flow-row lg:grid-cols-2 shadow-lg rounded-md">
+              <div className="items-center justify-center grid grid-rows-1 lg:grid-cols-2 lg:shadow-lg rounded-md">
                 <ScheduleCallForm
                   formTitle="Get in touch"
                   className="order-1 lg:order-0"

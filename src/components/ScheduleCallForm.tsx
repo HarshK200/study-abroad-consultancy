@@ -38,7 +38,7 @@ export const ScheduleCallForm = ({
   return (
     <form
       className={cn(
-        "h-full p-7 sm:p-10 flex flex-col gap-4",
+        "h-full p-7 sm:p-10 shadow-md lg:shadow-none rounded-md flex flex-col gap-4",
         className,
       )}
     >
