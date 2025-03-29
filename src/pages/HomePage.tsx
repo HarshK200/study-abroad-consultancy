@@ -11,6 +11,7 @@ import { useAtom } from "jotai";
 import { currentPageUrlAtom } from "@/store";
 import { UniversitySlider } from "@/components/UniversitySlider";
 import { SectionH1 } from "@/components/ui/SectionH1";
+import { ScheduleCallForm } from "@/components/ScheduleCallForm";
 
 export const HomePage = () => {
   const [_, setCurrentPageUrl] = useAtom(currentPageUrlAtom);
@@ -29,7 +30,7 @@ export const HomePage = () => {
         <GlobalPaddingXWrapper>
           <GlobalPaddingYWrapper>
             <MaxWidthWrapper>
-              <div className="items-center justify-center grid auto-cols-fr grid-flow-row lg:grid-cols-2 gap-3">
+              <div className="items-center justify-center grid grid-flow-row lg:grid-cols-2 gap-3">
                 <div>
                   <SectionH1 className="mb-5">
                     Your one stop solution to Study Abroad!
@@ -51,7 +52,7 @@ export const HomePage = () => {
 
       <section
         id="universities-marquee-section"
-        className="flex flex-col items-center"
+        className="flex flex-col items-center my-10"
       >
         <GlobalPaddingXWrapper>
           <MaxWidthWrapper>
@@ -67,9 +68,18 @@ export const HomePage = () => {
         <GlobalPaddingXWrapper>
           <GlobalPaddingYWrapper>
             <MaxWidthWrapper>
-              <SectionH1 className="mb-5">
-                Guiding you to success step-by-step
-              </SectionH1>
+              <div className="items-center justify-center grid grid-flow-row lg:grid-cols-2 shadow-lg rounded-md">
+                <ScheduleCallForm
+                  formTitle="Get in touch"
+                  className="order-1 lg:order-0"
+                />
+                <div
+                  className="w-full h-full rounded-r-md bg-center bg-cover"
+                  style={{
+                    backgroundImage: "url(/abroad_university_img.jpg)",
+                  }}
+                ></div>
+              </div>
             </MaxWidthWrapper>
           </GlobalPaddingYWrapper>
         </GlobalPaddingXWrapper>
