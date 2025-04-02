@@ -64,7 +64,7 @@ export const ScheduleCallForm = ({
 
       <div className="flex flex-row gap-4">
         <div className="flex flex-col w-fit">
-          <Label htmlFor="country-code">Code</Label>
+          <Label>Code</Label>
           <DropDownInput
             id="country-code"
             options={["IN +91", "US +1", "UK +44", "FR +33"]}

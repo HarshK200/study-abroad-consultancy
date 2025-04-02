@@ -12,6 +12,8 @@ import { currentPageUrlAtom } from "@/store";
 import { UniversitySlider } from "@/components/UniversitySlider";
 import { SectionH1 } from "@/components/ui/SectionH1";
 import { ScheduleCallForm } from "@/components/ScheduleCallForm";
+import { StudentSlider } from "@/components/StudentSlider";
+import { Footer } from "@/components/Footer";
 
 export const HomePage = () => {
   const [_, setCurrentPageUrl] = useAtom(currentPageUrlAtom);
@@ -25,7 +27,7 @@ export const HomePage = () => {
     <main>
       <section
         id="hero-section"
-        className="bg-linear-to-bl from-cta to-cta-darker text-white"
+        className="bg-linear-to-bl from-cta via-cta-darker via-[35%] to-blue-950 text-white"
       >
         <GlobalPaddingXWrapper>
           <GlobalPaddingYWrapper>
@@ -84,6 +86,24 @@ export const HomePage = () => {
           </GlobalPaddingYWrapper>
         </GlobalPaddingXWrapper>
       </section>
+
+      <section
+        id="admited-students-scroller-section"
+        className="bg-linear-to-bl from-cta via-cta-darker via-[35%] to-blue-950 text-white"
+      >
+        <GlobalPaddingYWrapper>
+          <MaxWidthWrapper className="max-w-[1680px]">
+            <div className="w-full">
+              <SectionH1 className="text-center mb-18">
+                Top Scorers and Recent Admits
+              </SectionH1>
+              <StudentSlider />
+            </div>
+          </MaxWidthWrapper>
+        </GlobalPaddingYWrapper>
+      </section>
+
+      <Footer />
     </main>
   );
 };
