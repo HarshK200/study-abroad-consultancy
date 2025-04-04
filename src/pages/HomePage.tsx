@@ -13,7 +13,6 @@ import { UniversitySlider } from "@/components/UniversitySlider";
 import { SectionH1 } from "@/components/ui/SectionH1";
 import { ScheduleCallForm } from "@/components/ScheduleCallForm";
 import { StudentSlider } from "@/components/StudentSlider";
-import { Footer } from "@/components/Footer";
 
 export const HomePage = () => {
   const [_, setCurrentPageUrl] = useAtom(currentPageUrlAtom);

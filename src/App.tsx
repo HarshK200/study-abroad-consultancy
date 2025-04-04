@@ -22,7 +22,7 @@ function App() {
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Footer />
+      <Footer className="bg-gray-100 hidden lg:block" />
     </div>
   );
 }

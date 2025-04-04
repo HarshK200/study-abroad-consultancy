@@ -12,86 +12,96 @@ import {
   TEST_PREP_OPTIONS,
 } from "@/utils/constants";
 import { FooterLink } from "./ui/FooterLink";
+import { cn } from "@/utils/cn";
 
-export const Footer = () => {
+export const Footer = ({ className }: { className?: string }) => {
   return (
-    <GlobalPaddingYWrapper className="bg-gray-100">
-      <GlobalPaddingXWrapper>
-        <MaxWidthWrapper className="flex text-sm">
-          <div className="flex-4/6 grid grid-cols-4">
-            <div className="flex flex-col">
-              <h3 className="font-bold py-2">STUDY DESTS</h3>
-              {STUDY_DESTINATIONS.map((destination) => (
-                <FooterLink
-                  to={
-                    "/study-destinations/" +
-                    destination.toLowerCase().replaceAll(" ", "-")
+    <footer>
+      <GlobalPaddingYWrapper className={cn("", className)}>
+        <GlobalPaddingXWrapper>
+          <MaxWidthWrapper className="flex text-sm">
+            <div className="flex-4/6 grid grid-cols-4">
+              <div className="flex flex-col">
+                <h3 className="font-bold py-2">STUDY DESTS</h3>
+                {STUDY_DESTINATIONS.map((destination) => (
+                  <FooterLink
+                    to={
+                      "/study-destinations/" +
+                      destination.toLowerCase().replaceAll(" ", "-")
+                    }
+                  >
+                    {destination}
+                  </FooterLink>
+                ))}
+              </div>
+              <div className="flex flex-col">
+                <h3 className="font-bold py-2">SCHOLARSHIPS</h3>
+                {SCHOLARSHIPS.map((scholarship) => (
+                  <FooterLink
+                    to={
+                      "/scholarships/" +
+                      scholarship.toLowerCase().replaceAll(" ", "-")
+                    }
+                  >
+                    {scholarship}
+                  </FooterLink>
+                ))}
+              </div>
+              <div className="flex flex-col">
+                <h3 className="font-bold py-2">TEST PREP</h3>
+                {TEST_PREP_OPTIONS.map((option) => (
+                  <FooterLink
+                    to={
+                      "/testprep/" + option.toLowerCase().replaceAll(" ", "-")
+                    }
+                  >
+                    {option}
+                  </FooterLink>
+                ))}
+              </div>
+              <div className="flex flex-col">
+                <h3 className="font-bold py-2">MORE</h3>
+                {MORE_LINKS.map((link) => (
+                  <FooterLink to={link.toLowerCase().replaceAll(" ", "-")}>
+                    {link}
+                  </FooterLink>
+                ))}
+              </div>
+            </div>
+            <div className="flex-2/6 flex flex-col">
+              <label htmlFor="email" className="font-bold py-2">
+                Signup to our mail list
+              </label>
+              <h3 className="pb-5 text-gray-600">
+                Stay updated with latest exam, news and new opportunities
+              </h3>
+              <div className="flex gap-4">
+                <Input
+                  name="email"
+                  className="h-full"
+                  placeholder="Email address"
+                />
+                <SecondaryBtn
+                  onClick={() =>
+                    alert(
+                      "This is a placeholder website so no real emailing here ;>",
+                    )
                   }
                 >
-                  {destination}
-                </FooterLink>
-              ))}
+                  Subscribe
+                </SecondaryBtn>
+              </div>
             </div>
-            <div className="flex flex-col">
-              <h3 className="font-bold py-2">SCHOLARSHIPS</h3>
-              {SCHOLARSHIPS.map((scholarship) => (
-                <FooterLink
-                  to={
-                    "/scholarships/" +
-                    scholarship.toLowerCase().replaceAll(" ", "-")
-                  }
-                >
-                  {scholarship}
-                </FooterLink>
-              ))}
-            </div>
-            <div className="flex flex-col">
-              <h3 className="font-bold py-2">TEST PREP</h3>
-              {TEST_PREP_OPTIONS.map((option) => (
-                <FooterLink
-                  to={"/testprep/" + option.toLowerCase().replaceAll(" ", "-")}
-                >
-                  {option}
-                </FooterLink>
-              ))}
-            </div>
-            <div className="flex flex-col">
-              <h3 className="font-bold py-2">MORE</h3>
-              {MORE_LINKS.map((link) => (
-                <FooterLink to={link.toLowerCase().replaceAll(" ", "-")}>
-                  {link}
-                </FooterLink>
-              ))}
-            </div>
-          </div>
-          <div className="flex-2/6 flex flex-col">
-            <label htmlFor="email" className="font-bold py-2">
-              Signup to our mail list
-            </label>
-            <h3 className="pb-5 text-gray-600">
-              Stay updated with latest exam, news and new opportunities
-            </h3>
-            <div className="flex gap-4">
-              <Input
-                name="email"
-                className="h-full"
-                placeholder="Email address"
-              />
-              <SecondaryBtn
-                onClick={() =>
-                  alert(
-                    "This is a placeholder website so no real emailing here ;>",
-                  )
-                }
-              >
-                Subscribe
-              </SecondaryBtn>
-            </div>
-          </div>
-        </MaxWidthWrapper>
-      </GlobalPaddingXWrapper>
-    </GlobalPaddingYWrapper>
+          </MaxWidthWrapper>
+        </GlobalPaddingXWrapper>
+      </GlobalPaddingYWrapper>
+    </footer>
   );
+};
+
+export const FooterMobile = () => {
+  return <footer>
+  </footer>;
 };
 
 export const OfficeLocMap = () => {
