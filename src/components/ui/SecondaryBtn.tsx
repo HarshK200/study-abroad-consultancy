@@ -1,23 +1,35 @@
 import { currentPageUrlAtom } from "@/store";
 import { useAtom } from "jotai";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-interface buttonProps {
+interface buttonProps extends React.HTMLProps<HTMLButtonElement> {
   children: React.ReactNode;
-  to: string;
+  to?: string;
   className?: string;
 }
 
-export const SecondaryBtn = ({ children, to, className }: buttonProps) => {
+export const SecondaryBtn = ({
+  children,
+  to,
+  className,
+  onClick,
+}: buttonProps) => {
+  const navigate = useNavigate();
   const [_, setUrl] = useAtom(currentPageUrlAtom);
 
+  function handleClick() {
+    if (to) {
+      setUrl(to);
+      navigate(to);
+    }
+  }
+
   return (
-    <Link
-      to={to}
-      onClick={() => setUrl(to)}
+    <button
+      onClick={onClick ? onClick : handleClick}
       className={`w-fit whitespace-nowrap text-center cursor-pointer px-5 py-3 rounded-md text-black bg-secondary ${className}`}
     >
       {children}
-    </Link>
+    </button>
   );
 };

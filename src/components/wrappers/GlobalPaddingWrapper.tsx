@@ -1,3 +1,5 @@
+import { cn } from "@/utils/cn";
+
 export const GlobalPaddingXWrapper = ({
   children,
 }: {
@@ -8,8 +10,12 @@ export const GlobalPaddingXWrapper = ({
 
 export const GlobalPaddingYWrapper = ({
   children,
+  className,
 }: {
   children: React.ReactNode;
+  className?: string;
 }) => {
-  return <div className="py-12 md:py-12 lg:py-14">{children}</div>;
+  return (
+    <div className={cn("py-12 md:py-12 lg:py-14", className)}>{children}</div>
+  );
 };

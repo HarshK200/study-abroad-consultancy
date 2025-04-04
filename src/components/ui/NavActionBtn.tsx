@@ -16,10 +16,12 @@ export const NavActionLink = ({ children, to, className }: buttonProps) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const urlParsed = url.split("#")[0].split("/").join("");
-    const toParsed = to.split("#")[0].split("/").join("");
+    const urlFirstPath = url.split("/")[1];
+    const toFirstPath = to.split("/")[1];
+    console.log("url: ", urlFirstPath);
+    console.log("to:", toFirstPath);
 
-    urlParsed === toParsed ? setIsActive(true) : setIsActive(false);
+    urlFirstPath === toFirstPath ? setIsActive(true) : setIsActive(false);
   }, [url]);
 
   return (
@@ -31,7 +33,7 @@ export const NavActionLink = ({ children, to, className }: buttonProps) => {
 
         navigate(to);
       }}
-      className={`hover:text-cta whitespace-nowrap w-full px-3 py-3 flex items-start font-normal cursor-pointer ${isActive ? "border-l-[4px] border-cta xl:border-l-0 xl:border-b-[4px]" : ""} ${isActive ? "bg-secondary" : ""} ${className}`}
+      className={`hover:text-cta hover:rounded-sm hover:bg-white hover:opacity-60 whitespace-nowrap w-full px-3 py-3 flex items-start font-normal cursor-pointer ${isActive ? "border-l-[4px] border-cta xl:border-l-0 xl:border-b-[4px]" : ""} ${isActive ? "bg-secondary" : ""} ${className}`}
     >
       {children}
     </a>

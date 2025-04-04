@@ -39,7 +39,7 @@ const ActionBtns = ({ className }: { className?: string }) => {
     <div className={`items-center ${className}`}>
       <NavActionLink to="/">Home</NavActionLink>
       <NavActionLink to="/testprep">TestPrep</NavActionLink>
-      <NavActionLink to="/study-destination">Study Destinations</NavActionLink>
+      <NavActionLink to="/study-destinations">Study Destinations</NavActionLink>
       <NavActionLink to="/scholarships">ScholarShips</NavActionLink>
       <NavActionLink to="/testimonials">Testimonials</NavActionLink>
       <NavActionLink to="/blogs">Blogs</NavActionLink>

@@ -102,8 +102,6 @@ export const HomePage = () => {
           </MaxWidthWrapper>
         </GlobalPaddingYWrapper>
       </section>
-
-      <Footer />
     </main>
   );
 };
