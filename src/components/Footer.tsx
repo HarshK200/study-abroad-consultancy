@@ -13,8 +13,11 @@ import {
 } from "@/utils/constants";
 import { FooterLink } from "./ui/FooterLink";
 import { cn } from "@/utils/cn";
+import { useState } from "react";
 
 export const Footer = ({ className }: { className?: string }) => {
+  const [email, setEmail] = useState<string>("");
+
   return (
     <footer>
       <GlobalPaddingYWrapper className={cn("", className)}>
@@ -25,6 +28,7 @@ export const Footer = ({ className }: { className?: string }) => {
                 <h3 className="font-bold py-2">STUDY DESTS</h3>
                 {STUDY_DESTINATIONS.map((destination) => (
                   <FooterLink
+                    key={destination}
                     to={
                       "/study-destinations/" +
                       destination.toLowerCase().replaceAll(" ", "-")
@@ -38,6 +42,7 @@ export const Footer = ({ className }: { className?: string }) => {
                 <h3 className="font-bold py-2">SCHOLARSHIPS</h3>
                 {SCHOLARSHIPS.map((scholarship) => (
                   <FooterLink
+                    key={scholarship}
                     to={
                       "/scholarships/" +
                       scholarship.toLowerCase().replaceAll(" ", "-")
@@ -51,6 +56,7 @@ export const Footer = ({ className }: { className?: string }) => {
                 <h3 className="font-bold py-2">TEST PREP</h3>
                 {TEST_PREP_OPTIONS.map((option) => (
                   <FooterLink
+                    key={option}
                     to={
                       "/testprep/" + option.toLowerCase().replaceAll(" ", "-")
                     }
@@ -62,7 +68,7 @@ export const Footer = ({ className }: { className?: string }) => {
               <div className="flex flex-col">
                 <h3 className="font-bold py-2">MORE</h3>
                 {MORE_LINKS.map((link) => (
-                  <FooterLink to={link.toLowerCase().replaceAll(" ", "-")}>
+                  <FooterLink key={link} to={link.toLowerCase().replaceAll(" ", "-")}>
                     {link}
                   </FooterLink>
                 ))}
@@ -80,11 +86,15 @@ export const Footer = ({ className }: { className?: string }) => {
                   name="email"
                   className="h-full"
                   placeholder="Email address"
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setEmail(e.target.value)
+                  }
+                  value={email}
                 />
                 <SecondaryBtn
                   onClick={() =>
                     alert(
-                      "This is a placeholder website so no real emailing here ;>",
+                      `Your email: ${email}\n(This is a placeholder website so no real emailing here ;>)`,
                     )
                   }
                 >
@@ -100,8 +110,7 @@ export const Footer = ({ className }: { className?: string }) => {
 };
 
 export const FooterMobile = () => {
-  return <footer>
-  </footer>;
+  return <footer></footer>;
 };
 
 export const OfficeLocMap = () => {

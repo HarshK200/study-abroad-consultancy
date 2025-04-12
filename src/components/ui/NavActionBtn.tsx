@@ -18,8 +18,8 @@ export const NavActionLink = ({ children, to, className }: buttonProps) => {
   useEffect(() => {
     const urlFirstPath = url.split("/")[1];
     const toFirstPath = to.split("/")[1];
-    console.log("url: ", urlFirstPath);
-    console.log("to:", toFirstPath);
+    // console.log("url: ", urlFirstPath);
+    // console.log("to:", toFirstPath);
 
     urlFirstPath === toFirstPath ? setIsActive(true) : setIsActive(false);
   }, [url]);

@@ -44,7 +44,7 @@ export const HomePage = () => {
                     <SecondaryBtn to="/#contact-us">Contact Us</SecondaryBtn>
                   </div>
                 </div>
-                <img src="/model.avif" className="w-full" />
+                <img src="/model_with_flags.avif" className="w-full" />
               </div>
             </MaxWidthWrapper>
           </GlobalPaddingYWrapper>
