@@ -14,6 +14,12 @@ import {
 import { FooterLink } from "./ui/FooterLink";
 import { cn } from "@/utils/cn";
 import { useState } from "react";
+import {
+  FacebookIcon,
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "lucide-react";
 
 export const Footer = ({ className }: { className?: string }) => {
   const [email, setEmail] = useState<string>("");
@@ -23,7 +29,7 @@ export const Footer = ({ className }: { className?: string }) => {
       <GlobalPaddingYWrapper className={cn("", className)}>
         <GlobalPaddingXWrapper>
           <MaxWidthWrapper className="text-sm">
-            <div className="grid lg:grid-cols-[1fr_1fr_1fr_1fr_1.5fr] md:grid-cols-4 sm:grid-cols-3 gap-4">
+            <div className="pb-16 grid lg:grid-cols-[1fr_1fr_1fr_1fr_1.5fr] md:grid-cols-4 sm:grid-cols-3 gap-4">
               <div className="flex flex-col">
                 <h3 className="font-bold py-2">STUDY DESTS</h3>
                 {STUDY_DESTINATIONS.map((destination) => (
@@ -104,6 +110,41 @@ export const Footer = ({ className }: { className?: string }) => {
                     Subscribe
                   </SecondaryBtn>
                 </div>
+              </div>
+            </div>
+            <div className="my-2 h-[2px] w-full bg-gray-300"></div>
+            <div className="flex flex-col-reverse lg:flex-row lg:items-center justify-between text-gray-500 py-4 gap-4">
+              <div className="flex md:items-center gap-4 md:flex-row flex-col">
+                <span className="text-nowrap order-4 py-2 md:order-0">
+                  © 2025 Study-abroad. All rights reserved.
+                </span>
+                <a className="underline cursor-pointer text-sm text-nowrap">
+                  Privacy Policy
+                </a>
+                <a className="underline cursor-pointer text-sm text-nowrap">
+                  Security Policy
+                </a>
+                <a className="underline cursor-pointer text-sm text-nowrap">
+                  Terms and Conditions
+                </a>
+              </div>
+              <div className="flex items-center gap-4 py-3">
+                <GithubIcon
+                  size={25}
+                  className="bg-gray-500 p-1 rounded-full text-white cursor-pointer hover:bg-blue-400"
+                />
+                <FacebookIcon
+                  size={25}
+                  className="bg-gray-500 p-1 rounded-full text-white cursor-pointer hover:bg-blue-400"
+                />
+                <TwitterIcon
+                  size={25}
+                  className="bg-gray-500 p-1 rounded-full text-white cursor-pointer hover:bg-blue-400"
+                />
+                <LinkedinIcon
+                  size={25}
+                  className="bg-gray-500 p-1 text-white rounded-sm cursor-pointer hover:bg-blue-400"
+                />
               </div>
             </div>
           </MaxWidthWrapper>
