@@ -22,8 +22,8 @@ export const Footer = ({ className }: { className?: string }) => {
     <footer>
       <GlobalPaddingYWrapper className={cn("", className)}>
         <GlobalPaddingXWrapper>
-          <MaxWidthWrapper className="flex text-sm">
-            <div className="flex-4/6 grid grid-cols-4">
+          <MaxWidthWrapper className="text-sm">
+            <div className="grid lg:grid-cols-[1fr_1fr_1fr_1fr_1.5fr] md:grid-cols-4 sm:grid-cols-3 gap-4">
               <div className="flex flex-col">
                 <h3 className="font-bold py-2">STUDY DESTS</h3>
                 {STUDY_DESTINATIONS.map((destination) => (
@@ -68,38 +68,42 @@ export const Footer = ({ className }: { className?: string }) => {
               <div className="flex flex-col">
                 <h3 className="font-bold py-2">MORE</h3>
                 {MORE_LINKS.map((link) => (
-                  <FooterLink key={link} to={link.toLowerCase().replaceAll(" ", "-")}>
+                  <FooterLink
+                    key={link}
+                    to={link.toLowerCase().replaceAll(" ", "-")}
+                  >
                     {link}
                   </FooterLink>
                 ))}
               </div>
-            </div>
-            <div className="flex-2/6 flex flex-col">
-              <label htmlFor="email" className="font-bold py-2">
-                Signup to our mail list
-              </label>
-              <h3 className="pb-5 text-gray-600">
-                Stay updated with latest exam, news and new opportunities
-              </h3>
-              <div className="flex gap-4">
-                <Input
-                  name="email"
-                  className="h-full"
-                  placeholder="Email address"
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setEmail(e.target.value)
-                  }
-                  value={email}
-                />
-                <SecondaryBtn
-                  onClick={() =>
-                    alert(
-                      `Your email: ${email}\n(This is a placeholder website so no real emailing here ;>)`,
-                    )
-                  }
-                >
-                  Subscribe
-                </SecondaryBtn>
+              <div className="flex flex-col lg:col-span-1 sm:col-span-2">
+                <label htmlFor="email-list" className="font-bold py-2">
+                  Signup to our mail list
+                </label>
+                <h3 className="pb-5 text-gray-600">
+                  Stay updated with latest exam, news and new opportunities
+                </h3>
+                <div className="flex gap-4">
+                  <Input
+                    id="email-list"
+                    name="email-list"
+                    className="h-full"
+                    placeholder="Email address"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setEmail(e.target.value)
+                    }
+                    value={email}
+                  />
+                  <SecondaryBtn
+                    onClick={() =>
+                      alert(
+                        `Your email: ${email}\n(This is a placeholder website so no real emailing here ;>)`,
+                      )
+                    }
+                  >
+                    Subscribe
+                  </SecondaryBtn>
+                </div>
               </div>
             </div>
           </MaxWidthWrapper>
@@ -107,10 +111,6 @@ export const Footer = ({ className }: { className?: string }) => {
       </GlobalPaddingYWrapper>
     </footer>
   );
-};
-
-export const FooterMobile = () => {
-  return <footer></footer>;
 };
 
 export const OfficeLocMap = () => {
